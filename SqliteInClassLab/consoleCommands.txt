@@ -1,0 +1,53 @@
+--Exercise 1
+SELECT FirstName, LastName, Email
+FROM Employee;
+
+-- Exercise 2
+SELECT *
+FROM Artist;
+
+-- Exercise 3
+SELECT *
+FROM Employee
+WHERE Title LIKE '% Manager';
+
+-- Exercise 4
+SELECT max(Total), min(Total)
+FROM Invoice;
+
+SELECT *
+FROM Invoice
+WHERE Total = 25.86;
+
+SELECT *
+FROM Invoice
+WHERE Total = 0.99;
+
+-- Exercise 5
+SELECT BillingAddress, BillingCity, BillingPostalCode, Total
+FROM Invoice
+WHERE BillingCountry == 'Germany';
+
+-- Exercise 6
+SELECT BillingAddress, BillingCity, BillingPostalCode, Total
+FROM Invoice
+WHERE 15.0 < Total AND Total < 25.0;
+
+-- Exercise 7
+SELECT DISTINCT BillingCountry
+FROM Invoice;
+
+-- Exercise 8
+SELECT FirstName, LastName, CustomerId, Country
+FROM Customer
+WHERE Country != 'USA';
+
+-- Exercise 9
+SELECT *
+FROM Customer
+WHERE Country == 'Brazil';
+
+-- Exercise 10
+SELECT Track.Name, InvoiceLine.UnitPrice, InvoiceLine.Quantity
+FROM Track
+INNER JOIN InvoiceLine ON Track.TrackId = InvoiceLine.TrackId;
