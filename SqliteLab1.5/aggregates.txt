@@ -1,0 +1,40 @@
+-- Exercise 1
+SELECT max(Total)
+FROM Invoice;
+
+-- Exercise 2
+SELECT max(Total)
+FROM Invoice
+ORDER BY Total desc
+LIMIT 1;
+
+-- Exercise 3
+SELECT MT.MediaTypeId, count(*)
+FROM Track T
+JOIN MediaType MT on T.MediaTypeId = MT.MediaTypeId
+GROUP BY MT.MediaTypeId;
+
+-- Exercise 4
+SELECT MT.MediaTypeId, count(*) c
+FROM Track T
+JOIN MediaType MT on T.MediaTypeId = MT.MediaTypeId
+GROUP BY MT.MediaTypeId
+ORDER BY c DESC;
+
+-- Exercise 5
+SELECT MT.MediaTypeId, count(*) c
+FROM Track T
+JOIN MediaType MT on T.MediaTypeId = MT.MediaTypeId
+GROUP BY MT.MediaTypeId HAVING(c > 200)
+ORDER BY c DESC;
+
+-- Exercise 6
+SELECT count(T.Name) countTrack, count(DISTINCT A2.Name) countArtists
+FROM Track T
+JOIN Album A1 ON T.AlbumId = A1.AlbumId
+JOIN Artist A2 ON A1.ArtistId = A2.ArtistId
+WHERE A2.Name LIKE 'A%';
+
+-- Exercise 7
+SELECT FirstName || ' ' || LastName, BirthDate, substr(BirthDate, 1, 3)||'0'
+FROM Employee;
