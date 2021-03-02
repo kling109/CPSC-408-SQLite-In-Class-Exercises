@@ -1,0 +1,6 @@
+Name: Trevor Kling
+
+References:
+SQLite Tutorial: Subqueries (https://www.sqlitetutorial.net/sqlite-subquery/)
+   Used to review formulation of subqueries for bonus.
+Zybook: Database Management Chapters 3.6 - 3.10
